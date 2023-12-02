@@ -19,7 +19,7 @@ class DishRequest(BaseModel):
 #   class that takes from the user index of prevoiously generated dish
 
 # API key to connect to gpt-3.5-turbo
-openai = OpenAI(api_key="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")
+openai = OpenAI(api_key="PUT_YOUR_API_KEY_HERE")
 
 # method that generates dish propositions and stores them in global variable generated_propositions
 # ingredients are stored in global variable named ingredients

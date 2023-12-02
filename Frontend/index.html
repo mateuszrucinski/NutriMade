@@ -1,122 +1,123 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="globals.css"/>
-    <link rel="stylesheet" href="styleguide.css"/>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>NutriMade</title>
 </head>
+
 <body>
-<div id="app" class="formularz">
-    <div class="div">
-        <div v-if="loading">Loading...</div>
-        <div class="dieta">
-            <div class="table-view">
-                <div class="title"><p class="text-wrapper">Podaj informacje o swoim posiłku</p></div>
-                <div class="table-view-cells">
-                    <div class="tableview-cell">
-                        <div class="content">
-                            <div class="inner-content">
-                                <div class="left-content">
-                                    <div class="label">{{nutri_info_1}}</div>
+    <div id="app" class="formularz">
+        <div class="div">
+            <div v-if="loading">Loading...</div>
+            <div class="dieta">
+                <div class="table-view">
+                    <div class="title">
+                        <p class="text-wrapper">Podaj informacje o swoim posiłku</p>
+                    </div>
+                    <div class="table-view-cells">
+                        <div class="tableview-cell">
+                            <div class="content">
+                                <div class="inner-content">
+                                    <div class="left-content">
+                                        <div class="label">{{nutri_info_1}}</div>
+                                    </div>
+                                    <div class="right-content"><img class="toggle" :src="toggleImage('vegan_diet')"
+                                            @click="handleToggleClick('vegan_diet')" alt="" /></div>
                                 </div>
-                                <div class="right-content"><img class="toggle" :src="toggleImage"
-                                     @click="handleToggleClick('vegan_diet')" alt=""/></div>
+                            </div>
+                        </div>
+                        <div class="tableview-cell-2">
+                            <div class="content">
+                                <div class="inner-content">
+                                    <div class="left-content">
+                                        <div class="label">{{nutri_info_2}}</div>
+                                    </div>
+                                    <div class="right-content"><img class="toggle" :src="toggleImage('vegetarian_diet')"
+                                            @click="handleToggleClick('vegetarian_diet')" alt="" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableview-cell-3">
+                            <div class="content">
+                                <div class="inner-content">
+                                    <div class="left-content">
+                                        <div class="label">{{nutri_info_3}}</div>
+                                    </div>
+                                    <div class="right-content"><img class="toggle" :src="toggleImage('no_lactose')"
+                                            @click="handleToggleClick('no_lactose')" alt="" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableview-cell-4">
+                            <div class="content">
+                                <div class="inner-content">
+                                    <div class="left-content">
+                                        <div class="label">{{nutri_info_4}}</div>
+                                    </div>
+                                    <div class="right-content"><img class="toggle" :src="toggleImage('Diabetes')"
+                                            @click="handleToggleClick('Diabetes')" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-wrapper">
+                            <div class="content-2">
+                                <div class="inner-content">
+                                    <div class="label-wrapper">
+                                        <div class="label">{{nutri_info_5}}</div>
+                                    </div>
+                                    <div class="div-wrapper">
+                                        <label for="calories"></label>
+                                        <input type="text" id="calories" v-model="Calories" placeholder="kcal"
+                                            class="label-2">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="tableview-cell-2">
-                        <div class="content">
-                            <div class="inner-content">
-                                <div class="left-content">
-                                    <div class="label">{{nutri_info_2}}</div>
-                                </div>
-                                <div class="right-content"><img class="toggle" src="assets/img/toggleOff.svg"
-                                                                alt=""/></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tableview-cell-3">
-                        <div class="content">
-                            <div class="inner-content">
-                                <div class="left-content">
-                                    <div class="label">{{nutri_info_3}}</div>
-                                </div>
-                                <div class="right-content"><img class="toggle" src="assets/img/toggleOff.svg"
-                                                                alt=""/></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tableview-cell-4">
-                        <div class="content">
-                            <div class="inner-content">
-                                <div class="left-content">
-                                    <div class="label">{{nutri_info_4}}</div>
-                                </div>
-                                <div class="right-content"><img class="toggle" src="assets/img/toggleOn.svg" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-wrapper">
-                        <div class="content-2">
-                            <div class="inner-content">
-                                <div class="label-wrapper">
-                                    <div class="label">{{nutri_info_5}}</div>
-                                </div>
-                                <div class="div-wrapper">
-                                    <label for="calories"></label>
-                                    <input type="text" id="calories" v-model="Calories" placeholder="kcal" class="label-2">
-                                </div>
-                            </div>
-                        </div>
+                    <div class="title-wrapper">
+                        <div class="text-wrapper">Zaznacz swój posiłek</div>
                     </div>
                 </div>
-                <div class="title-wrapper">
-                    <div class="text-wrapper">Zaznacz swój posiłek</div>
+            </div>
+            <div class="segmented-picker">
+                <div class="segmentedpicker">
+                    <div class="value">Śniadanie</div>
+                </div>
+                <div class="segmentedpicker">
+                    <div class="value">Obiad</div>
+                </div>
+                <div class="segmentedpicker-2">
+                    <div class="value-2">Kolacja</div>
                 </div>
             </div>
-        </div>
-        <div class="segmented-picker">
-            <div class="segmentedpicker">
-                <!--                <div class="separator"></div>-->
-                <div class="value">Śniadanie</div>
+            <div class="frame">
+                <label for="textInput"></label>
+                <textarea class="key-container" id="textInput" v-model="Preferences"
+                    placeholder="Wprowadź pozostałe szczegóły swojej diety oraz osobiste preferencje"></textarea>
             </div>
-            <div class="segmentedpicker">
-                <!--                <div class="separator"></div>-->
-                <div class="value">Obiad</div>
-            </div>
-            <div class="segmentedpicker-2">
-                <div class="value-2">Kolacja</div>
-            </div>
+            <button @click="sendNutriForm" class="button">
+                <span class="label-3">Wygeneruj</span>
+            </button>
+            <button class="button-2">
+                <span class="label-4">Powrót</span>
+            </button>
         </div>
-
-        <div class="frame">
-            <label for="textInput"></label>
-            <textarea class="key-container" id = "textInput" v-model="Preferences" placeholder="Wprowadź pozostałe szczegóły swojej diety oraz osobiste preferencje"></textarea>
-        </div>
-
-
-        <button @click="sendNutriForm" class="button">
-            <span class="label-3">Wygeneruj</span>
-        </button>
-        <button class="button-2">
-            <span class="label-4">Powrót</span>
-        </button>
-
     </div>
-</div>
     <!-- Import App -->
-  <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
 
-  <!-- Mount app -->
-  <!-- ustawia kod js do divu o id 'app' -->
-  <script>
-    const mountedApp = app.mount('#app')
-  </script>
+    <!-- Mount app -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
 </body>
+
 </html>

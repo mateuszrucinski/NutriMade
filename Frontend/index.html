@@ -13,6 +13,7 @@
 <body>
 <div id="app" class="formularz">
     <div class="div">
+        <div v-if="loading">Loading...</div>
         <div class="dieta">
             <div class="table-view">
                 <div class="title"><p class="text-wrapper">Podaj informacje o swoim posiłku</p></div>
@@ -23,8 +24,8 @@
                                 <div class="left-content">
                                     <div class="label">{{nutri_info_1}}</div>
                                 </div>
-                                <div class="right-content"><img class="toggle" src="assets/img/toggleOn.svg"
-                                                                alt=""/></div>
+                                <div class="right-content"><img class="toggle" :src="toggleImage"
+                                     @click="handleToggleClick('vegan_diet')" alt=""/></div>
                             </div>
                         </div>
                     </div>
@@ -69,7 +70,7 @@
                                 </div>
                                 <div class="div-wrapper">
                                     <label for="calories"></label>
-                                    <input type="text" id="calories" placeholder="kcal" class="label-2">
+                                    <input type="text" id="calories" v-model="Calories" placeholder="kcal" class="label-2">
                                 </div>
                             </div>
                         </div>
@@ -96,7 +97,7 @@
 
         <div class="frame">
             <label for="textInput"></label>
-            <textarea class="key-container" id = "textInput" placeholder="Wprowadź pozostałe szczegóły swojej diety oraz osobiste preferencje"></textarea>
+            <textarea class="key-container" id = "textInput" v-model="Preferences" placeholder="Wprowadź pozostałe szczegóły swojej diety oraz osobiste preferencje"></textarea>
         </div>
 
 

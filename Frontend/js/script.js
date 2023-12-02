@@ -6,22 +6,35 @@ const app = Vue.createApp({
         nutri_info_2: 'Dieta Wegetariańska',
         nutri_info_3: 'Bez Laktozy',
         nutri_info_4: 'Cukrzyca',
-        nutri_info_4: 'Kalorie',
+        nutri_info_5: 'Kalorie',
+        text: '',
+        loading: false,
+        vegan_diet: false,
+        vegetarian_diet: false,
+        no_lactose: false,
+        Diabetes: false,
+        Calories: '',
+        Meal_type: '',
+        Preferences: '',
       }
     },
     methods: {
       async sendNutriForm() {
           // Data to be sent in the request body (if any)
+          // Data to be sent in the request body (if any)
           const requestData = {
-            vegan_diet: true,
-            vegetarian_diet: true,
-            no_lactose: true,
-            Diabetes: true,
-            Calories: 0,
-            Meal_type: "string",
-            Preferences: "string"
-          };
+            vegan_diet: this.vegan_diet,
+            vegetarian_diet: this.vegetarian_diet,
+            no_lactose: this.no_lactose,
+            Diabetes: this.Diabetes,
+            Calories: this.Calories,
+            Meal_type: this.Meal_type,
+            Preferences: this.Preferences,
+        };
 
+          this.loading = true;
+
+          // method post
           const response = await fetch(`http://127.0.0.1:8000/generate-dish-propositions`, {
             method: 'POST',
             headers: {
@@ -32,10 +45,30 @@ const app = Vue.createApp({
             body: JSON.stringify(requestData), // Convert the data to JSON format
             }
             );
+
+            //method get
+            const getResponse = await fetch(`http://127.0.0.1:8000/generate-dish-propositions/sending-with-get-method`);
+            const data = await response.json();
+            this.text = data;
+
+            this.loading = false;
+
+            // window.location.href = 'propozycja.html';
       },
       getData() {
         return this.text
       },
-    }
+      // Method to handle toggle clicks
+      handleToggleClick(property) {
+        this[property] = !this[property];
+        console.log(this[property]);
+      },
+    }, 
+    computed: {
+      // Computed property to dynamically select the toggle image based on the data property
+      toggleImage() {
+          return this.vegan_diet ? 'assets/img/toggleOn.svg' : 'assets/img/toggleOff.svg';
+      },
+  },
   }); 
   

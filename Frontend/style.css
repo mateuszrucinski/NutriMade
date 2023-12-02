@@ -1,0 +1,414 @@
+.formularz {
+  background-color: #f2f2f7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.formularz .div {
+  background-color: #f2f2f7;
+  width: 390px;
+  height: 844px;
+  position: relative;
+}
+
+.formularz .dieta {
+  position: absolute;
+  width: 358px;
+  height: 284px;
+  top: 73px;
+  left: 16px;
+}
+
+.formularz .table-view {
+  display: flex;
+  flex-direction: column;
+  width: 358px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.formularz .title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 0 8px 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.formularz .text-wrapper {
+  position: relative;
+  width: 342px;
+  margin-top: -1px;
+  font-family: var(--caption1-regular-font-family);
+  font-weight: var(--caption1-regular-font-weight);
+  color: var(--label-colorlightsecondary);
+  font-size: var(--caption1-regular-font-size);
+  letter-spacing: var(--caption1-regular-letter-spacing);
+  line-height: var(--caption1-regular-line-height);
+  font-style: var(--caption1-regular-font-style);
+}
+
+.formularz .table-view-cells {
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.formularz .tableview-cell {
+  width: 358px;
+  align-items: center;
+  gap: 16px;
+  padding: 0 0 0 16px;
+  z-index: 4;
+  background-color: var(--system-backgroundlightprimary);
+  display: flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.formularz .content {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: var(--separator-colorlightwith-transparency);
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+}
+
+.formularz .inner-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  flex: 1;
+
+}
+
+.formularz .left-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 0;
+  position: relative;
+  flex: 1;
+
+}
+
+.formularz .label {
+  flex: 1;
+  margin-top: -1px;
+  font-family: var(--body-regular-font-family);
+  color: var(--label-colorlightprimary);
+  position: relative;
+  font-weight: var(--body-regular-font-weight);
+  font-size: var(--body-regular-font-size);
+  letter-spacing: var(--body-regular-letter-spacing);
+  line-height: var(--body-regular-line-height);
+  font-style: var(--body-regular-font-style);
+}
+
+.formularz .right-content {
+  display: inline-flex;
+  height: 44px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px 0 0;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.formularz .toggle {
+  position: relative;
+  width: 57px;
+  height: 43px;
+  margin-bottom: -2.5px;
+  margin-right: -6px;
+}
+
+.formularz .tableview-cell-2 {
+  z-index: 3;
+  display: flex;
+  width: 358px;
+  align-items: center;
+  gap: 16px;
+  padding: 0 0 0 16px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--system-backgroundlightprimary);
+}
+
+.formularz .tableview-cell-3 {
+  z-index: 2;
+  display: flex;
+  width: 358px;
+  align-items: center;
+  gap: 16px;
+  padding: 0 0 0 16px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--system-backgroundlightprimary);
+}
+
+.formularz .tableview-cell-4 {
+  z-index: 1;
+  display: flex;
+  width: 358px;
+  align-items: center;
+  gap: 16px;
+  padding: 0 0 0 16px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--system-backgroundlightprimary);
+}
+
+.formularz .content-wrapper {
+  z-index: -10;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  width: 358px;
+  align-items: center;
+  gap: 16px;
+  padding: 0 0 0 16px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--system-backgroundlightprimary);
+}
+
+.formularz .content-2 {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+
+}
+
+.formularz .label-wrapper {
+  display: flex;
+  width: 96px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 0;
+  position: relative;
+}
+
+.formularz .div-wrapper {
+  display: flex;
+  height: 44px;
+  align-items: center;
+  padding: 0 16px 0 0;
+  position: relative;
+  flex: 1;
+
+}
+
+.formularz .label-2 {
+  width: fit-content;
+  font-family: var(--body-regular-font-family);
+  color: var(--label-colorlightsecondary);
+  white-space: nowrap;
+  position: relative;
+  font-weight: var(--body-regular-font-weight);
+  font-size: var(--body-regular-font-size);
+  letter-spacing: var(--body-regular-letter-spacing);
+  line-height: var(--body-regular-line-height);
+  font-style: var(--body-regular-font-style);
+}
+
+.formularz .title-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 16px 0 8px 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.formularz .segmented-picker {
+  display: flex;
+  width: 343px;
+  height: 32px;
+  align-items: flex-start;
+  padding: 2px;
+  position: absolute;
+  top: 357px;
+  left: 23px;
+  background-color: var(--fill-colorlighttertiary);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.formularz .segmentedpicker {
+  position: relative;
+  flex: 1;
+
+  height: 28px;
+  border-radius: 7px;
+}
+
+.formularz .separator {
+  position: absolute;
+  width: 1px;
+  height: 16px;
+  top: 6px;
+  left: 111px;
+  background-color: var(--separator-colorlightwith-transparency);
+  border-radius: 1px;
+}
+
+.formularz .value {
+  width: 97px;
+  height: 16px;
+  top: 5px;
+  left: 8px;
+  font-family: "SF Pro Text-Medium", Helvetica, serif;
+  font-weight: 500;
+  color: var(--label-colorlightprimary);
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  font-size: 13px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+}
+
+.formularz .segmentedpicker-2 {
+  position: relative;
+  flex: 1;
+
+  height: 29px;
+  margin-top: -0.5px;
+  margin-bottom: -0.5px;
+  margin-right: -0.5px;
+  background-color: var(--system-backgroundlightprimary);
+  border-radius: 7px;
+  border: 1px solid #0000000a;
+  box-shadow: 0 3px 1px #0000000a, 0 3px 8px #0000001f;
+}
+
+.formularz .value-2 {
+  width: 97px;
+  height: 16px;
+  top: 6px;
+  left: 8px;
+  font-family: "SF Pro Text-Semibold", Helvetica, serif;
+  font-weight: 400;
+  color: var(--label-colorlightprimary);
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  font-size: 13px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+}
+
+.formularz .frame {
+  display: flex;
+  flex-direction: column;
+  width: 343px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  top: 397px;
+  left: 23px;
+}
+
+.formularz .key-container {
+  position: relative;
+  width: 343px;
+  height: 208px;
+  background-color: #e3e3e8;
+  border-radius: 10px;
+}
+
+.formularz .p {
+  width: 315px;
+  height: 33px;
+  top: 13px;
+  left: 10px;
+  font-family: "SF Pro Text-Medium", Helvetica, serif;
+  font-weight: 500;
+  color: #474747;
+  position: absolute;
+  font-size: 13px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+}
+
+.formularz .button {
+  top: 621px;
+  background-color: var(--defaultsystembluelight);
+  display: flex;
+  width: 342px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  position: absolute;
+  left: 24px;
+  border-radius: 14px;
+  /*all: unset;*/
+  box-sizing: border-box;
+}
+
+.formularz .label-3 {
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--body-bold-font-family);
+  color: var(--label-colordarkprimary);
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+  font-weight: var(--body-bold-font-weight);
+  font-size: var(--body-bold-font-size);
+  letter-spacing: var(--body-bold-letter-spacing);
+  line-height: var(--body-bold-line-height);
+  font-style: var(--body-bold-font-style);
+}
+
+.formularz .button-2 {
+  top: 679px;
+  background-color: var(--system-backgroundlightsecondary);
+  display: flex;
+  width: 342px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  position: absolute;
+  left: 24px;
+  border-radius: 14px;
+  /*all: unset;*/
+  box-sizing: border-box;
+}
+
+.formularz .label-4 {
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--body-bold-font-family);
+  color: var(--label-colorlightprimary);
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+  font-weight: var(--body-bold-font-weight);
+  font-size: var(--body-bold-font-size);
+  letter-spacing: var(--body-bold-letter-spacing);
+  line-height: var(--body-bold-line-height);
+  font-style: var(--body-bold-font-style);
+}

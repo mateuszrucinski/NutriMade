@@ -21,7 +21,7 @@
                                 <div class="left-content">
                                     <div class="label">Dieta Wegańska</div>
                                 </div>
-                                <div class="right-content"><img class="toggle" src="src/assets/img/toggleOff.svg"
+                                <div class="right-content"><img class="toggle" src="assets/img/toggleOn.svg"
                                                                 alt=""/></div>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                                 <div class="left-content">
                                     <div class="label">Dieta Wegetariańska</div>
                                 </div>
-                                <div class="right-content"><img class="toggle" src="src/assets/img/toggleOn.svg"
+                                <div class="right-content"><img class="toggle" src="assets/img/toggleOff.svg"
                                                                 alt=""/></div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                                 <div class="left-content">
                                     <div class="label">Bez Laktozy</div>
                                 </div>
-                                <div class="right-content"><img class="toggle" src="src/assets/img/toggleOn.svg"
+                                <div class="right-content"><img class="toggle" src="assets/img/toggleOff.svg"
                                                                 alt=""/></div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                 <div class="left-content">
                                     <div class="label">Cukrzyca</div>
                                 </div>
-                                <div class="right-content"><img class="toggle" src="src/assets/img/toggleOn.svg" alt=""/>
+                                <div class="right-content"><img class="toggle" src="assets/img/toggleOn.svg" alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,8 @@
                                     <div class="label">Kalorie</div>
                                 </div>
                                 <div class="div-wrapper">
-                                    <div class="label-2">kcal</div>
+                                    <label for="calories"></label>
+                                    <input type="text" id="calories" placeholder="kcal" class="label-2">
                                 </div>
                             </div>
                         </div>
@@ -79,23 +80,23 @@
         </div>
         <div class="segmented-picker">
             <div class="segmentedpicker">
-                <div class="separator"></div>
+                <!--                <div class="separator"></div>-->
                 <div class="value">Śniadanie</div>
             </div>
             <div class="segmentedpicker">
+                <!--                <div class="separator"></div>-->
                 <div class="value">Obiad</div>
             </div>
             <div class="segmentedpicker-2">
                 <div class="value-2">Kolacja</div>
             </div>
         </div>
+
         <div class="frame">
-            <div class="key-container"></div>
-            <p class="p">Wprowadź pozostałe szczegóły swojej diety oraz osobiste preferencje</p>
+            <label for="textInput"></label>
+            <textarea class="key-container" id = "textInput" placeholder="Wprowadź pozostałe szczegóły swojej diety oraz osobiste preferencje"></textarea>
         </div>
 
-<!--        <button class="button"><span class="label">Wygeneruj</span></button>-->
-<!--        <button class="button"><span class="label">Powrót</span></button>-->
 
         <button class="button">
             <span class="label-3">Wygeneruj</span>

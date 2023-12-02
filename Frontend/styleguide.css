@@ -4,7 +4,7 @@
   --label-colordarkprimary: rgba(255, 255, 255, 1);
   --separator-colorlightwith-transparency: rgba(60, 60, 67, 0.36);
   --system-backgroundlightprimary: rgba(255, 255, 255, 1);
-  --defaultsystembluelight: rgba(0, 122, 255, 1);
+  --defaultsystembluelight: rgb(0, 123, 255);
   --system-backgroundlightsecondary: rgba(242, 242, 247, 1);
   --fill-colorlighttertiary: rgba(118, 118, 128, 0.12);
   --defaultsystembluedark: rgba(10, 132, 255, 1);

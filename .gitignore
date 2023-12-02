@@ -1,1 +1,9 @@
+# frontend
+#-------
 .DS_Store
+
+
+#backend
+#-------
+#disable python environment
+./backend/env/

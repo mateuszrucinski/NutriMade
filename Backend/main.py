@@ -1,11 +1,11 @@
 from fastapi import FastAPI, Query, HTTPException
 from pydantic import BaseModel
 from openai import OpenAI
-
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-#global variables
+# global variables
 generated_propositions = [...]
 vegan_diet: bool
 vegetarian_diet: bool
@@ -15,7 +15,8 @@ Calories: int
 Meal_type: str
 Preferences: str
 
-#   class that contains types of requested information in the first method (/generate-dish-propositions/)
+
+#  class that contains types of requested information in the first method (/generate-dish-propositions/)
 class DishRequest(BaseModel):
     vegan_diet: bool = Query(...)
     vegetarian_diet: bool = Query(...)
@@ -27,14 +28,15 @@ class DishRequest(BaseModel):
 
 
 # API key to connect to gpt-3.5-turbo
-openai = OpenAI(api_key="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")
+openai = OpenAI(api_key="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")
+
 
 # method that generates dish propositions and stores them in global variable generated_propositions
 @app.post("/generate-dish-propositions/")
 async def generate_dish_propositions(request: DishRequest):
 
     user_message = (
-        f"Give me 5 dish propositions (only the names of the dishes and nothing more) with the following preferences:"
+        f"Give the response in Polish, Give me 5 dish propositions (only the names of the dishes and nothing more) with the following preferences:"
         f" Vegan: {request.vegan_diet}, Vegetarian: {request.vegetarian_diet},"
         f" No Lactose: {request.no_lactose}, Diabetes: {request.Diabetes},"
         f" Calories: {request.Calories}, Meal Type: {request.Meal_type},"
@@ -72,6 +74,7 @@ async def generate_dish_propositions(request: DishRequest):
     generated_propositions = [{"name": name.strip()} for name in response.choices[0].message.content.split("\n")]
     return {"ok": "ok"}
 
+
 #method that sends generated dishes back to the website
 @app.get("/generate-dish-propositions/sending-with-get-method")
 async def get_generated_dish_propositions():
@@ -82,7 +85,7 @@ async def get_generated_dish_propositions():
 
 
 
-#method that gives ingredients and instructions to meal selected from prevoiusly generated meals
+# method that gives ingredients and instructions to meal selected from prevoiusly generated meals
 @app.get("/generate-dish-instructions/{index}")
 async def generate_dish_instructions(index: int):
     global generated_propositions
@@ -94,7 +97,7 @@ async def generate_dish_instructions(index: int):
     selected_dish = generated_propositions[index-1]["name"]
 
     user_message_2 = (
-        f"Give me list of ingredients and instructions (separate ingredients and instruction with '***') how to prepare {selected_dish} with the following preferences: "
+        f"Give the response in Polish. Give me name of the dish, difficulty of preparing the dish and time of preparation, then give me list of ingredients and instructions how to prepare {selected_dish} with the following preferences: "
         f" Vegan: {vegan_diet}, Vegetarian: {vegetarian_diet},"
         f" No Lactose: {no_lactose}, Diabetes: {Diabetes},"
         f" Calories: {Calories}, Meal Type: {Meal_type},"
@@ -113,3 +116,16 @@ async def generate_dish_instructions(index: int):
     )
 
     return {"generated_instruction": response2.choices[0].message.content}
+
+
+origins = [
+   "http://127.0.0.1:5500/",   # Replace with the port your Vue.js app is running on
+]
+
+app.add_middleware(
+   CORSMiddleware,
+   allow_origins=origins,
+   allow_credentials=True,
+   allow_methods=[""],
+   allow_headers=[""],
+)

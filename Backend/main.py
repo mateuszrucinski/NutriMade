@@ -28,7 +28,7 @@ class DishRequest(BaseModel):
 
 
 # API key to connect to gpt-3.5-turbo
-openai = OpenAI(api_key="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")
+openai = OpenAI(api_key="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")
 
 
 # method that generates dish propositions and stores them in global variable generated_propositions
@@ -36,7 +36,7 @@ openai = OpenAI(api_key="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")
 async def generate_dish_propositions(request: DishRequest):
 
     user_message = (
-        f"Give the response in Polish, Give me 5 dish propositions (only the names of the dishes and nothing more) with the following preferences:"
+        f"Give the response in Polish, Give me 3 dish propositions (only the names of the dishes and nothing more) with the following preferences:"
         f" Vegan: {request.vegan_diet}, Vegetarian: {request.vegetarian_diet},"
         f" No Lactose: {request.no_lactose}, Diabetes: {request.Diabetes},"
         f" Calories: {request.Calories}, Meal Type: {request.Meal_type},"

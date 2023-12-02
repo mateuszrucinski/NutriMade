@@ -175,7 +175,7 @@
 }
 
 .formularz .content-wrapper {
-  z-index: -10;
+  z-index: 1;
   border-radius: 0 0 10px 10px;
   display: flex;
   width: 358px;
@@ -304,7 +304,7 @@
 .formularz .value-2 {
   width: 97px;
   height: 16px;
-  top: 6px;
+  top: 4px;
   left: 8px;
   font-family: "SF Pro Text-Semibold", Helvetica, serif;
   font-weight: 400;
@@ -365,6 +365,7 @@
   border-radius: 14px;
   /*all: unset;*/
   box-sizing: border-box;
+  border-width: 0;
 }
 
 .formularz .label-3 {
@@ -396,6 +397,8 @@
   border-radius: 14px;
   /*all: unset;*/
   box-sizing: border-box;
+  border-width: 1px;
+  border-color: #b7b7b7;
 }
 
 .formularz .label-4 {

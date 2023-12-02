@@ -27,7 +27,7 @@ openai = OpenAI(api_key="PUT_YOUR_API_KEY_HERE")
 async def generate_dish_propositions(request: DishRequest):
 
     user_message = (
-        f"Give me 5 dish propositions (only the names of the dishes) with the following preferences:"
+        f"Give me 5 dish propositions (only the names of the dishes and nothing more) with the following preferences:"
         f" Vegan: {request.vegan_diet}, Vegetarian: {request.vegetarian_diet},"
         f" No Lactose: {request.no_lactose}, Diabetes: {request.Diabetes},"
         f" Calories: {request.Calories}, Meal Type: {request.Meal_type},"

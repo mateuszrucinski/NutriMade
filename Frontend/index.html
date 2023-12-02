@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="globals.css"/>
     <link rel="stylesheet" href="styleguide.css"/>
     <link rel="stylesheet" href="style.css"/>
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>NutriMade</title>
 </head>
 <body>
-<div class="formularz">
+<div id="app" class="formularz">
     <div class="div">
         <div class="dieta">
             <div class="table-view">
@@ -19,7 +21,7 @@
                         <div class="content">
                             <div class="inner-content">
                                 <div class="left-content">
-                                    <div class="label">Dieta Wegańska</div>
+                                    <div class="label">{{nutri_info_1}}</div>
                                 </div>
                                 <div class="right-content"><img class="toggle" src="assets/img/toggleOn.svg"
                                                                 alt=""/></div>
@@ -30,7 +32,7 @@
                         <div class="content">
                             <div class="inner-content">
                                 <div class="left-content">
-                                    <div class="label">Dieta Wegetariańska</div>
+                                    <div class="label">{{nutri_info_2}}</div>
                                 </div>
                                 <div class="right-content"><img class="toggle" src="assets/img/toggleOff.svg"
                                                                 alt=""/></div>
@@ -41,7 +43,7 @@
                         <div class="content">
                             <div class="inner-content">
                                 <div class="left-content">
-                                    <div class="label">Bez Laktozy</div>
+                                    <div class="label">{{nutri_info_3}}</div>
                                 </div>
                                 <div class="right-content"><img class="toggle" src="assets/img/toggleOff.svg"
                                                                 alt=""/></div>
@@ -52,7 +54,7 @@
                         <div class="content">
                             <div class="inner-content">
                                 <div class="left-content">
-                                    <div class="label">Cukrzyca</div>
+                                    <div class="label">{{nutri_info_4}}</div>
                                 </div>
                                 <div class="right-content"><img class="toggle" src="assets/img/toggleOn.svg" alt=""/>
                                 </div>
@@ -63,7 +65,7 @@
                         <div class="content-2">
                             <div class="inner-content">
                                 <div class="label-wrapper">
-                                    <div class="label">Kalorie</div>
+                                    <div class="label">{{nutri_info_5}}</div>
                                 </div>
                                 <div class="div-wrapper">
                                     <label for="calories"></label>
@@ -98,7 +100,7 @@
         </div>
 
 
-        <button class="button">
+        <button @click="sendNutriForm" class="button">
             <span class="label-3">Wygeneruj</span>
         </button>
         <button class="button-2">
@@ -107,5 +109,13 @@
 
     </div>
 </div>
+    <!-- Import App -->
+  <script src="./js/script.js"></script>
+
+  <!-- Mount app -->
+  <!-- ustawia kod js do divu o id 'app' -->
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
 </body>
 </html>

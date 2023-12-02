@@ -12,7 +12,7 @@ const app = Vue.createApp({
         vegan_diet: false,
         vegetarian_diet: false,
         no_lactose: false,
-        Diabetes: false,
+        Diabetes: true,
         Calories: '',
         Meal_type: '',
         Preferences: '',
@@ -46,14 +46,13 @@ const app = Vue.createApp({
             }
             );
 
-            //method get
-            const getResponse = await fetch(`http://127.0.0.1:8000/generate-dish-propositions/sending-with-get-method`);
-            const data = await response.json();
-            this.text = data;
-
             this.loading = false;
 
-            // window.location.href = 'propozycja.html';
+            setTimeout(() =>  {
+              window.location.href = 'propozycje.html'
+            }, 500)
+
+            // ;
       },
       getData() {
         return this.text

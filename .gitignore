@@ -6,4 +6,5 @@
 #backend
 #-------
 #disable python environment
-./backend/env/
+./Backend/env/
+./Backend/__pycache__
